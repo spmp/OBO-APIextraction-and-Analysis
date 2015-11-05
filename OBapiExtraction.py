@@ -12,11 +12,11 @@
     Eventually we will have to figure out where to continue from should
     the process be interrupted.
 """
-
-import urllib3
-import pandas as pd
-import numpy as np
+import argparse
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import urllib3
 
 import CategoryToNumberAssignment as c2n
 
@@ -380,4 +380,8 @@ def GetEmAll():
     generateDataFramesRangeSaving(16740000, 19130000, 10000, 'indeterminate', SaveEvery=1, File='OBOextractIndeterminate1yr', Overwrite = 0)
 
 """Run the thing if we execute this script"""
-GetEmAll()
+parser = argparse.ArgumentParser()
+parser.add_argument("-g", "--getEmAll", action='store_true', help="Get all the NoGender metadata from the OBO")
+args = parser.parse_args()
+if args.getEmAll is True:
+    GetEmAll()
