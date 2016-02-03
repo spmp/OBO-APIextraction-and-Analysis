@@ -2,7 +2,7 @@
 """
     Download the complete OBO data per day via the API.
     
-    For each gender (All, Male, Femal, Other), get daily histograms for
+    For each gender (All, Male, Female, Other), get daily histograms for
     charges and subcharges to not guilty, punishments, and subpunishments.
     
     We will use urllib3 for the downloading due to its connection pool
